@@ -1,0 +1,183 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+button {
+    margin-right: -4px;
+    margin-left: 0;
+	margin-top: 20px;
+  	line-height: 60px;
+		font-weight: bold;
+	padding: 0 40px;
+		background: salmon;
+		border: none;
+}
+.menu{
+	top: 100px;
+}
+#bestOfThree{
+	position: relative;
+	left: -600px;
+}
+#bestOfFive{
+	position: relative;
+	left: -600px;
+}
+.inGame{
+	position: relative;
+	top: 5000px;
+}
+button:hover {
+	background: lightsalmon;
+}
+.background{
+	background-color: lightgrey;
+	height: 300px;
+	width: 605px;
+	position: relative;
+}
+#childPlayer{
+	background-image: url(https://i.ibb.co/vYngKVt/P1.png);
+	height: 64px;
+	width: 64px;
+	position: absolute;
+	bottom: 0;
+	left: 10px;
+}
+#childPc{
+	background-image: url(https://i.ibb.co/WFy6JFQ/PC.png);
+	height: 64px;
+	width: 64px;
+	position: absolute;
+	bottom: 0;
+	right: 10px;
+}
+#announcer{
+	display: block;
+	text-align: center;
+	font-family: 'Brush Script MT', cursive;
+	font-size: 20px;
+}
+#childPlayer.play{
+	animation: fightFromLeft 700ms linear normal forwards;
+}
+#childPlayer.lose{
+	animation: loseLeft 1400ms linear normal;
+}
+#childPc.play{
+	animation: fightFromRight 700ms linear normal forwards;
+}
+#childPc.lose{
+	animation: loseRight 1400ms linear normal;
+}
+@keyframes loseLeft{
+	0%{
+		opacity: 1;
+		left: 100px;
+	}
+	31.25%{
+		opacity: 1;
+	}
+	50%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 0;
+		left: 100px
+	}
+}
+
+@keyframes loseRight{
+	0%{
+		opacity: 1;
+		right: 100px;
+	}
+	31.25%{
+		opacity: 1;
+	}
+	50%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 0;
+		right: 100px;
+	}
+}
+
+@keyframes fightFromLeft{
+	12.5%{
+		left: 50px;
+		bottom: 75px;
+	}
+	25%{
+		left: 100px;
+		bottom: 115px;
+	}
+	37.5%{
+		left: 150px;
+		bottom: 130px;
+	}
+	50%{
+		left: 200px;
+		bottom: 118px;
+	}
+	62.5%{
+		left: 252.5px;
+		bottom: 75px;
+	}
+	75%{
+		left: 200px;
+		bottom: 90px;
+	}
+	87.5%{
+		left: 150px;
+		bottom: 80px;
+	}
+	93.75%{
+		left: 125px;
+		bottom: 60px;
+	}
+	100%{
+		left: 100px;
+		bottom: 0px;
+	}
+}
+
+@keyframes fightFromRight{
+	12.5%{
+		right: 50px;
+		bottom: 75px;
+	}
+	25%{
+		right: 100px;
+		bottom: 115px;
+	}
+	37.5%{
+		right: 150px;
+		bottom: 130px;
+	}
+	50%{
+		right: 200px;
+		bottom: 118px;
+	}
+	62.5%{
+		right: 252.5px;
+		bottom: 75px;
+	}
+	75%{
+		right: 200px;
+		bottom: 90px;
+	}
+	87.5%{
+		right: 150px;
+		bottom: 80px;
+	}
+	93.75%{
+		right: 125px;
+		bottom: 60px;
+	}
+	100%{
+		right: 100px;
+		bottom: 0px;
+	}
+}

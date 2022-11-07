@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title> RPSLS </title>
+		<link rel='stylesheet' type='text/css' href = 'style.css'>
+	</head>
+	<body>
+		<h1 style="font-size: 36;""text-align: center;">
+			The Game
+		</h1>
+        <div id="classicSwitch">
+            <input type="checkbox" id="classicCheckbox">
+            <label for="classicSwitch">Classic Game</label>
+        </div>
+		<aside>
+			Make your Choice!
+		</aside>
+        <button id="rockButton" class="inGame">Rock</button>
+        <button id="spockButton" class="inGame">Spock</button>
+        <button id="paperButton" class="inGame">Paper</button>
+        <button id="lizardButton" class="inGame">Lizard</button>
+        <button id="scissorsButton" class="inGame">Scissors</button>
+        <button id="bestOfThree" class="">Best of Three</button>
+        <button id="bestOfFive" class="">Best of Five</button>
+		<script src="javascript.js"></script>
+		<div class="background inGame">
+			<label id="announcer">Enemy is deciding</label>
+			<div id="childPlayer"></div>
+			<div id="childPc"></div>
+		</div>
+		<label id="counter" class="inGame">Player Wins: <var id="playerWins">0</var>| Pc Wins: <var id="pcWins">0</var>| Ties: <var id="ties">0</var> </label>
+	</body>
+</html>
