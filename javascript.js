@@ -46,6 +46,12 @@ function counterAdd(a) {
 	document.getElementById(a).innerHTML = newInt;
 }
 
+function scoreAdd(a) {
+	let startInt = parseInt(document.getElementById(a).innerHTML);
+	let newInt = startInt + 1;
+	document.getElementById(a).innerHTML = newInt;
+}
+
 function playRPSLS() {
 	let intRpslsResult = (pcInput - playerInput);
 	setTimeout(function () {
@@ -151,11 +157,14 @@ function backToMenu() {
 	  	var cols = document.getElementsByClassName('inGame');
 		for(i = 0; i < cols.length; i++) {
     	cols[i].style.top = '5000px';
-		}
+		};
 		bOT.className= "";
 		bOF.className= "";
 		fP.className= "";
 		bB.style.opacity= "0"
+		document.getElementById("ties").innerHTML = "0";
+		document.getElementById("playerWins").innerHTML = "0";
+		document.getElementById("pcWins").innerHTML = "0";
 };
 function statusCheck() {
 	let win = "YOU WIN!"
@@ -165,20 +174,24 @@ function statusCheck() {
 	if (gameMode == 1) {
 		if (checkIntPc == 2) {
 		document.getElementById("announcer").innerHTML = lose;
+		scoreAdd("pcScore");
 		setTimeout(backToMenu(),1000);
 		}
 		else if(checkIntPlayer == 2) {
 		document.getElementById("announcer").innerHTML = win;
+		scoreAdd("playerScore");
 		setTimeout(backToMenu(),1000);
 		}
 	}
 	else if (gameMode == 2) {
 		if (checkIntPc == 3) {
 		document.getElementById("announcer").innerHTML = lose;
+		scoreAdd("pcScore");
 		setTimeout(backToMenu(),1000);
 		}
 		else if(checkIntPlayer == 3){
 		document.getElementById("announcer").innerHTML = win;
+		scoreAdd("playerScore");
 		setTimeout(backToMenu(),1000);
 		}
 		}

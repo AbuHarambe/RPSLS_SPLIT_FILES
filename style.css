@@ -12,6 +12,14 @@ button {
 		background: salmon;
 		border: none;
 }
+table{
+	border-collapse: collapse;
+	border: 1px solid black;
+	width: 120px;
+}
+th, td{
+	text-align: left;
+}
 .menu{
 	top: 100px;
 }
@@ -66,6 +74,12 @@ button:hover {
 	display: block;
 	text-align: center;
 	font-family: 'Brush Script MT', cursive;
+	font-size: 20px;
+}
+#scoreboard{
+	position: relative;
+	top: -200px;
+	left: 610px;
 	font-size: 20px;
 }
 #childPlayer.play{
