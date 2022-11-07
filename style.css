@@ -23,6 +23,16 @@ button {
 	position: relative;
 	left: -600px;
 }
+#freeplay{
+	position: relative;
+	left: -600px;
+}
+#backButton{
+	position: relative;
+	top: 360px;
+	right: 111px;
+	opacity: 0;
+}
 .inGame{
 	position: relative;
 	top: 5000px;

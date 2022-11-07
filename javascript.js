@@ -147,7 +147,16 @@ function announce() {
 	let text = (pcText + " " + "," + " " +announcment)
 	document.getElementById("announcer").innerHTML = text;
 };
-
+function backToMenu() {
+	  	var cols = document.getElementsByClassName('inGame');
+		for(i = 0; i < cols.length; i++) {
+    	cols[i].style.top = '5000px';
+		}
+		bOT.className= "";
+		bOF.className= "";
+		fP.className= "";
+		bB.style.opacity= "0"
+};
 function statusCheck() {
 	let win = "YOU WIN!"
 	let lose = "YOU LOSE!"
@@ -156,17 +165,24 @@ function statusCheck() {
 	if (gameMode == 1) {
 		if (checkIntPc == 2) {
 		document.getElementById("announcer").innerHTML = lose;
+		setTimeout(backToMenu(),1000);
 		}
-		else if(checkIntPlayer == 2)
+		else if(checkIntPlayer == 2) {
 		document.getElementById("announcer").innerHTML = win;
+		setTimeout(backToMenu(),1000);
+		}
 	}
 	else if (gameMode == 2) {
 		if (checkIntPc == 3) {
 		document.getElementById("announcer").innerHTML = lose;
+		setTimeout(backToMenu(),1000);
 		}
-		else if(checkIntPlayer == 3)
+		else if(checkIntPlayer == 3){
 		document.getElementById("announcer").innerHTML = win;
+		setTimeout(backToMenu(),1000);
 		}
+		}
+	else if (gameMode == 3){}
 	};
 
 function resetPositions() {
@@ -205,8 +221,10 @@ bOT.addEventListener ("click", function() {
 	}
 	bOT.className= "menu";
 	bOF.className= "menu";
+	fP.className= "menu";
+	document.getElementById("backButton").style.opacity="1";
 	gameMode = 1
-}) ;
+});
 
 const bOF = document.getElementById("bestOfFive");
 bOF.addEventListener ("click", function() {
@@ -216,8 +234,29 @@ bOF.addEventListener ("click", function() {
 	}
 	bOF.className= "menu";
 	bOT.className= "menu";
+	fP.className= "menu";
+	document.getElementById("backButton").style.opacity="1";
 	gameMode = 2
-}) ;
+});
+
+const fP = document.getElementById("freeplay");
+fP.addEventListener ("click", function() {
+	var cols = document.getElementsByClassName('inGame');
+	for(i = 0; i < cols.length; i++) {
+    cols[i].style.top = '0px';
+	}
+	bOF.className= "menu";
+	bOT.className= "menu";
+	fP.className= "menu";
+	document.getElementById("backButton").style.opacity="1";
+	gameMode = 3
+});
+
+const bB = document.getElementById("backButton");
+bB.addEventListener ("click", function() {
+	backToMenu();
+	gameMode = 0
+});
 
 //Game Buttons
 const buttonRock = document.getElementById("rockButton");
